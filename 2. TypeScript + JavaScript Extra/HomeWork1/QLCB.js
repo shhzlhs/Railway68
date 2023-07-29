@@ -27,6 +27,12 @@ var QLCB = /** @class */ (function () {
                 break;
             case 3:
                 this.getAllCanBos();
+                break;
+            case 4:
+                this.deleteByName();
+                break;
+            case 5:
+                return;
         }
     };
     QLCB.createCanBo = function () {
@@ -45,11 +51,6 @@ var QLCB = /** @class */ (function () {
             case 3:
                 this.createNhanVien();
                 break;
-            case 4:
-                this.deleteByName();
-                break;
-            case 5:
-                return;
         }
     };
     QLCB.createCongNhan = function () {
@@ -64,6 +65,8 @@ var QLCB = /** @class */ (function () {
         CanBo_1.CanBo.canBos.push(congNhan);
         console.log("Tạo thành công Công nhân mới:");
         congNhan.toString();
+        console.log("Danh sách Cán bộ mới:");
+        console.log(CanBo_1.CanBo.canBos);
     };
     QLCB.createKySu = function () {
         var name = readlineSync.question("KySu's name: ");
@@ -76,6 +79,8 @@ var QLCB = /** @class */ (function () {
         CanBo_1.CanBo.canBos.push(kySu);
         console.log("Tạo thành công Kỹ sư mới:");
         kySu.toString();
+        console.log("Danh sách Cán bộ mới:");
+        console.log(CanBo_1.CanBo.canBos);
     };
     QLCB.createNhanVien = function () {
         var name = readlineSync.question("NhanVien's name: ");
@@ -88,6 +93,8 @@ var QLCB = /** @class */ (function () {
         CanBo_1.CanBo.canBos.push(nhanVien);
         console.log("Tạo thành công Nhân viên mới:");
         nhanVien.toString();
+        console.log("Danh sách Cán bộ mới:");
+        console.log(CanBo_1.CanBo.canBos);
     };
     QLCB.findByName = function () {
         console.log("Tên Cán bộ cần tìm?");
@@ -116,15 +123,26 @@ var QLCB = /** @class */ (function () {
         });
     };
     QLCB.deleteByName = function () {
-        var length = CanBo_1.CanBo.canBos.length;
+        var indexs = [];
+        var i = 0;
         console.log("Tên Cán bộ cần xóa?");
         var name = readlineSync.question("CanBo's name: ");
-        CanBo_1.CanBo.canBos = CanBo_1.CanBo.canBos.filter(function (element) { return element.getName() !== name; });
-        if (length > CanBo_1.CanBo.canBos.length) {
-            console.log("\u0110\u00E3 x\u00F3a C\u00E1n b\u1ED9 ".concat(name));
+        CanBo_1.CanBo.canBos.forEach(function (element, index) {
+            if (element.getName() == name) {
+                indexs.push(index);
+            }
+        });
+        if (indexs.length > 0) {
+            indexs.forEach(function (element) {
+                CanBo_1.CanBo.canBos.splice(element - i, 1);
+                i += 1;
+            });
+            console.log("Xóa thành công");
+            console.log("Danh sách Cán bộ sau khi xóa:");
+            console.log(CanBo_1.CanBo.canBos);
         }
         else {
-            console.log("Kh\u00F4ng t\u00ECm th\u1EA5y C\u00E1n b\u1ED9 c\u00F3 t\u00EAn ".concat(name));
+            console.log("Không tìm thấy cán bộ nào!");
         }
     };
     QLCB.chooseGender = function () {
@@ -137,13 +155,10 @@ var QLCB = /** @class */ (function () {
         switch (choice) {
             case 1:
                 return Gender_1.Gender.NAM;
-                break;
             case 2:
                 return Gender_1.Gender.NU;
-                break;
             case 3:
                 return Gender_1.Gender.KHAC;
-                break;
         }
         return Gender_1.Gender.KHAC;
     };

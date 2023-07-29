@@ -10,11 +10,8 @@ var congNhan1 = new CongNhan_1.CongNhan("Nguyen Vat Va", 30, Gender_1.Gender.NAM
 var congNhan2 = new CongNhan_1.CongNhan("Tran Cham Chi", 18, Gender_1.Gender.NAM, "Xóm Cần Cù", 7);
 var kySu1 = new KySu_1.KySu("Le Trinh Do", 25, Gender_1.Gender.KHAC, "Đại lộ Lighting", "Cầu Cống");
 var nhanVien1 = new NhanVien_1.NhanVien("Do Cu Ly", 29, Gender_1.Gender.NU, "Hẻm Làm Thuê", "Lao Công");
+var congNhan3 = new CongNhan_1.CongNhan("Nguyen Vat Va", 24, Gender_1.Gender.NU, "Biệt Thự X", 4);
 var nhanVien2 = new NhanVien_1.NhanVien("Ly Thi Buon", 21, Gender_1.Gender.NU, "Xóm Ồn Ào", "Lễ Tân");
-CanBo_1.CanBo.canBos.push(congNhan1);
-CanBo_1.CanBo.canBos.push(congNhan2);
-CanBo_1.CanBo.canBos.push(kySu1);
-CanBo_1.CanBo.canBos.push(nhanVien1);
-CanBo_1.CanBo.canBos.push(nhanVien2);
-console.log(CanBo_1.CanBo.canBos);
+var nhanVien3 = new NhanVien_1.NhanVien("Ly Thi Buon", 22, Gender_1.Gender.KHAC, "Ngõ Tự Do", "Bảo vệ");
+CanBo_1.CanBo.canBos.push(congNhan1, congNhan2, kySu1, nhanVien1, congNhan3, nhanVien2, nhanVien3);
 QLCB_1.QLCB.menu();

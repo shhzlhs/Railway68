@@ -22,6 +22,12 @@ export class QLCB {
         break;
       case 3:
         this.getAllCanBos();
+        break;
+      case 4:
+        this.deleteByName();
+        break;
+      case 5:
+        return;
     }
   }
 
@@ -41,11 +47,6 @@ export class QLCB {
       case 3:
         this.createNhanVien();
         break;
-      case 4:
-        this.deleteByName();
-        break;
-      case 5:
-        return;
     }
   }
 
@@ -61,6 +62,8 @@ export class QLCB {
     CanBo.canBos.push(congNhan);
     console.log("Tạo thành công Công nhân mới:");
     congNhan.toString();
+    console.log("Danh sách Cán bộ mới:");
+    console.log(CanBo.canBos);
   }
 
   public static createKySu() {
@@ -74,6 +77,8 @@ export class QLCB {
     CanBo.canBos.push(kySu);
     console.log("Tạo thành công Kỹ sư mới:");
     kySu.toString();
+    console.log("Danh sách Cán bộ mới:");
+    console.log(CanBo.canBos);
   }
 
   public static createNhanVien() {
@@ -87,6 +92,8 @@ export class QLCB {
     CanBo.canBos.push(nhanVien);
     console.log("Tạo thành công Nhân viên mới:");
     nhanVien.toString();
+    console.log("Danh sách Cán bộ mới:");
+    console.log(CanBo.canBos);
   }
 
   public static findByName() {
@@ -117,14 +124,25 @@ export class QLCB {
   }
 
   public static deleteByName() {
-    const length: number = CanBo.canBos.length;
+    var indexs: number[] = [];
+    var i: number = 0;
     console.log("Tên Cán bộ cần xóa?");
     const name: string = readlineSync.question("CanBo's name: ");
-    CanBo.canBos = CanBo.canBos.filter((element) => element.getName() !== name);
-    if (length > CanBo.canBos.length) {
-      console.log(`Đã xóa Cán bộ ${name}`);
+    CanBo.canBos.forEach((element, index) => {
+      if (element.getName() == name) {
+        indexs.push(index);
+      }
+    });
+    if (indexs.length > 0) {
+      indexs.forEach((element) => {
+        CanBo.canBos.splice(element - i, 1);
+        i += 1;
+      });
+      console.log("Xóa thành công");
+      console.log("Danh sách Cán bộ sau khi xóa:");
+      console.log(CanBo.canBos);
     } else {
-      console.log(`Không tìm thấy Cán bộ có tên ${name}`);
+      console.log("Không tìm thấy cán bộ nào!");
     }
   }
 
@@ -138,13 +156,10 @@ export class QLCB {
     switch (choice) {
       case 1:
         return Gender.NAM;
-        break;
       case 2:
         return Gender.NU;
-        break;
       case 3:
         return Gender.KHAC;
-        break;
     }
     return Gender.KHAC;
   }

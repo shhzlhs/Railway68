@@ -27,6 +27,7 @@ var nhanVien1 = new NhanVien(
   "Hẻm Làm Thuê",
   "Lao Công"
 );
+var congNhan3 = new CongNhan("Nguyen Vat Va", 24, Gender.NU, "Biệt Thự X", 4);
 var nhanVien2 = new NhanVien(
   "Ly Thi Buon",
   21,
@@ -34,10 +35,20 @@ var nhanVien2 = new NhanVien(
   "Xóm Ồn Ào",
   "Lễ Tân"
 );
-CanBo.canBos.push(congNhan1);
-CanBo.canBos.push(congNhan2);
-CanBo.canBos.push(kySu1);
-CanBo.canBos.push(nhanVien1);
-CanBo.canBos.push(nhanVien2);
-console.log(CanBo.canBos);
+var nhanVien3 = new NhanVien(
+  "Ly Thi Buon",
+  22,
+  Gender.KHAC,
+  "Ngõ Tự Do",
+  "Bảo vệ"
+);
+CanBo.canBos.push(
+  congNhan1,
+  congNhan2,
+  kySu1,
+  nhanVien1,
+  congNhan3,
+  nhanVien2,
+  nhanVien3
+);
 QLCB.menu();
