@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React from 'react';
+import './App.css';
 function App() {
+  let myName = "LHS";
+  // let myStyle = {background:'red'}
+  // let para = React.createElement("h1",null,"HELLO!");
+  let handleClick = ()=>{
+    alert("Á á á...")
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // React.createElement('div', null, para)
+    // <div style={{width:'20%',background:'gray',color:'red',textAlign:'center'}}>
+    // <div style={myStyle}>
+    <div className='App'>
+      <h1>
+        HELLO!!!
+      </h1>
+      <button onClick={handleClick}>Hey Click me!</button>
+      </div>
   );
 }
 

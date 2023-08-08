@@ -1,14 +1,14 @@
 import { CanBo } from "./CanBo";
 import { Gender } from "./Gender";
 export class KySu extends CanBo {
-  private specialized: String;
+  private specialized: string;
 
   constructor(
-    name: String,
+    name: string,
     age: number,
     gender: Gender,
-    address: String,
-    specialized: String
+    address: string,
+    specialized: string
   ) {
     super(name, age, gender, address);
     this.specialized = specialized;
@@ -16,17 +16,17 @@ export class KySu extends CanBo {
 
   /**
    * Getter specialized
-   * @return {String}
+   * @return {string}
    */
-  public getSpecialized(): String {
+  public getSpecialized(): string {
     return this.specialized;
   }
 
   /**
    * Setter specialized
-   * @param {String} value
+   * @param {string} value
    */
-  public setSpecialized(value: String) {
+  public setSpecialized(value: string) {
     this.specialized = value;
   }
   public toString() {

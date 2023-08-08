@@ -1,12 +1,12 @@
 import { Gender } from "./Gender";
 export class CanBo {
-  private name: String;
+  private name: string;
   private age: number;
   private gender: Gender;
-  private address: String;
+  private address: string;
   public static canBos: CanBo[] = [];
 
-  constructor(name: String, age: number, gender: Gender, address: String) {
+  constructor(name: string, age: number, gender: Gender, address: string) {
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -15,9 +15,9 @@ export class CanBo {
 
   /**
    * Getter name
-   * @return {String}
+   * @return {string}
    */
-  public getName(): String {
+  public getName(): string {
     return this.name;
   }
 
@@ -39,17 +39,17 @@ export class CanBo {
 
   /**
    * Getter address
-   * @return {String}
+   * @return {string}
    */
-  public getAddress(): String {
+  public getAddress(): string {
     return this.address;
   }
 
   /**
    * Setter name
-   * @param {String} value
+   * @param {string} value
    */
-  public setName(value: String) {
+  public setName(value: string) {
     this.name = value;
   }
 
@@ -71,9 +71,9 @@ export class CanBo {
 
   /**
    * Setter address
-   * @param {String} value
+   * @param {string} value
    */
-  public setAddress(value: String) {
+  public setAddress(value: string) {
     this.address = value;
   }
   public toString() {
