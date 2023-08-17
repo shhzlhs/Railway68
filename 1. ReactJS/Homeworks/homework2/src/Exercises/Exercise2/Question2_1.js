@@ -13,15 +13,9 @@ class Question2_1 extends Component {
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h2>Question 1:</h2>
           <h3>a:</h3>
-          <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <Question2_1a />
-          </div>
-          <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <Question2_1a />
-          </div>
-          <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <Question2_1a />
-          </div>
+          <Question2_1a />
+          <Question2_1a />
+          <Question2_1a />
 
           <div className="row">
             <h3>b:</h3>
@@ -40,12 +34,12 @@ class Question2_1 extends Component {
         </div>
 
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <div class="row">
+          <div className="row">
             <h3>e:</h3>
             <Question2_1e />
           </div>
 
-          <div class="row">
+          <div className="row">
             <h3>f:</h3>
             <Table />
           </div>

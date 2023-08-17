@@ -3,6 +3,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 class Top extends Component {
+  // countClick = 0;
+  // Khai báo contructor:
+  constructor(props) {
+    super(props);
+    // Khai báo Sate:
+    this.state = { countClick: 0 };
+  }
+  dataFromTopToApp = "Aaa...Có rồi!";
+  handleSentData = () => {
+    let { onReceive } = this.props;
+    if (this.state.countClick < 10) {
+      this.setState({ countClick: this.state.countClick + 1 });
+      // this.countClick = this.countClick + 1;
+    }
+    onReceive(this.dataFromTopToApp);
+  };
   render() {
     let { keyss, keyss1, topName } = this.props;
     console.log(keyss);
@@ -31,7 +47,7 @@ class Top extends Component {
           </h3>
         </div>
 
-        <div style={{ height: "50px" }} className="row">
+        <div style={{ height: "70px" }} className="row">
           <form>
             <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
               <input
@@ -53,18 +69,22 @@ class Top extends Component {
               }}
               className="col-xs-2 col-sm-2 col-md-2 col-lg-2"
             >
-              <input
-                type="submit"
+              <button
+                type="button"
+                onClick={this.handleSentData}
                 style={{
                   backgroundColor: "red",
                   color: "white",
                   margin: "10px",
                   height: "30px",
                 }}
-                value={"Sent Data"}
-              ></input>
+              >
+                Sent Data
+              </button>
             </div>
           </form>
+          <br></br>
+          <h4>Bạn đã click {this.state.countClick} lần </h4>
         </div>
       </div>
     );

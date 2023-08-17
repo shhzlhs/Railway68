@@ -44,17 +44,17 @@ class Middle extends Component {
           <tbody>
             <tr>
               <td>Sanpham1</td>
-              <td>Sanpham2</td>
-              <td>Sanpham3</td>
-            </tr>
-            <tr>
-              <td>Sp1</td>
-              <td>Sp2</td>
-              <td>Sp3</td>
-            </tr>
-            <tr>
+              <td>sp1</td>
               <td>100</td>
+            </tr>
+            <tr>
+              <td>Sanpham2</td>
+              <td>Sp2</td>
               <td>200</td>
+            </tr>
+            <tr>
+              <td>Sanpham3</td>
+              <td>Sp3</td>
               <td>2000</td>
             </tr>
           </tbody>

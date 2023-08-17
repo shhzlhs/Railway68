@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-class Top extends Component {
+class Bot extends Component {
   render() {
-    let keyss = this.props.keyss;
+    let { keyss, varPara } = this.props;
     console.log(keyss);
     return (
       <div>
@@ -34,6 +34,7 @@ class Top extends Component {
           <div className="row"></div>
 
           <textarea
+            value={varPara}
             name=""
             id="input"
             class="form-control"
@@ -46,4 +47,4 @@ class Top extends Component {
   }
 }
 
-export default Top;
+export default Bot;
