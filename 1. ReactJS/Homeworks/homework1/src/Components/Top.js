@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import TopChild from "./TopChild";
 
 class Top extends Component {
+  handleChange = (event) => {
+    this.setState({ data: event.target.value });
+  };
   // countClick = 0;
   // Khai báo contructor:
   constructor(props) {
     super(props);
     // Khai báo Sate:
-    this.state = { countClick: 0 };
+    this.state = { countClick: 0, data: "" };
   }
   dataFromTopToApp = "Aaa...Có rồi!";
   handleSentData = () => {
@@ -17,7 +21,7 @@ class Top extends Component {
       this.setState({ countClick: this.state.countClick + 1 });
       // this.countClick = this.countClick + 1;
     }
-    onReceive(this.dataFromTopToApp);
+    onReceive(this.state.data);
   };
   render() {
     let { keyss, keyss1, topName } = this.props;
@@ -25,6 +29,9 @@ class Top extends Component {
     console.log(keyss1);
     return (
       <div>
+        <p>{this.state.data}</p>
+        <TopChild keyss={keyss} />
+        <br></br>
         <div
           style={{
             backgroundColor: "green",
@@ -51,6 +58,8 @@ class Top extends Component {
           <form>
             <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
               <input
+                value={this.state.data}
+                onChange={this.handleChange}
                 type="text"
                 placeholder="Input something here"
                 style={{
