@@ -38,6 +38,9 @@ function ClickAsk({ showClickAsk, setShowAskModal, setAskImg, setAskState }) {
       case 11:
         setAskState("Quạc quạc...quạc... ");
         break;
+      case 12:
+        setAskState("Không phải nghĩ nhiều, ");
+        break;
       case 13:
         setAskState("Ta nghĩ ");
         break;
@@ -45,7 +48,13 @@ function ClickAsk({ showClickAsk, setShowAskModal, setAskImg, setAskState }) {
         setAskState("Ta đã nhìn ra  ");
         break;
       case 16:
-        setAskState("Ta nghĩ  ");
+        setAskState("Humn...Ta nghĩ  ");
+        break;
+      case 17:
+        setAskState("Chúng tôi đoán ");
+        break;
+      case 18:
+        setAskState("Đen nghĩ ");
         break;
       case 19:
         setAskState("Ta nghĩ  ");

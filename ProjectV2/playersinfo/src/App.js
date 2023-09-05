@@ -1,35 +1,17 @@
 import "./App.css";
-import { buttonStyle1, startBarStyle } from "./CSS/Styles";
+// import AppContainer from "./AppContainer";
+import Menu from "./Components/Menu";
+import { routes } from "./Routes";
+import { appStyle } from "./Styles";
+
 function App() {
   return (
-    <div className="container">
-      <div style={startBarStyle} className="row">
-        <div
-          style={buttonStyle1}
-          className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-        >
-          Home
-        </div>
-        <div
-          style={buttonStyle1}
-          className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-        >
-          Competitions
-        </div>
-        <div
-          style={buttonStyle1}
-          className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-        >
-          Teams
-        </div>
-        <div
-          style={buttonStyle1}
-          className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-        >
-          Players
-        </div>
+    <>
+      <Menu />
+      <div style={appStyle} className="row">
+        {routes}
       </div>
-    </div>
+    </>
   );
 }
 
