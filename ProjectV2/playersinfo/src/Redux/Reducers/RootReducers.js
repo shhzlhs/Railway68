@@ -13,7 +13,7 @@ import {
   showTeamInfoReducers,
 } from "./FormReducers";
 
-const reducerRoots = combineReducers({
+const rootReducers = combineReducers({
   competitions: competitionReducers,
   teams: teamReducers,
   players: playerReducers,
@@ -28,4 +28,4 @@ const reducerRoots = combineReducers({
   showSingleDeletePlayer: showSingleDeletePlayerReducers,
 });
 
-export { reducerRoots };
+export { rootReducers };
