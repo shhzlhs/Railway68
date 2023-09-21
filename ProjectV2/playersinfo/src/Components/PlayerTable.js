@@ -1,10 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { midStyle, playerAvatarStyle, playerInfoRow } from "../Styles";
 import { Link } from "react-router-dom";
+import { Input } from "reactstrap";
+import { setSearch } from "../Redux/Actions/PlayerActions";
 
 function PlayerTable(props) {
   let reduxState = useSelector((state) => state);
+  let dispatchRedux = useDispatch();
   let players = reduxState.players;
 
   const items = players.map((player, index) => {
@@ -39,7 +42,19 @@ function PlayerTable(props) {
       </div>
     );
   });
-  return <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">{items}</div>;
+  return (
+    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <Input
+        placeholder="Search by player's name..."
+        valid
+        type="text"
+        onChange={(event) => {
+          dispatchRedux(setSearch(event.target.value));
+        }}
+      ></Input>
+      {items}
+    </div>
+  );
 }
 
 export default PlayerTable;

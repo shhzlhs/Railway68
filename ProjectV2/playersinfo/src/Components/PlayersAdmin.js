@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   buttonStyle1,
@@ -20,8 +20,7 @@ import {
   showSingleDeletePlayer,
 } from "../Redux/Actions/FormActions";
 import EditPlayerModal from "../Modals/EditPlayerModal";
-import { getAllPlayers, setPlayerEdit } from "../Redux/Actions/PlayerActions";
-import { getAllTeams } from "../Redux/Actions/TeamActions";
+import { setPlayerEdit } from "../Redux/Actions/PlayerActions";
 import DeletePlayersModal from "../Modals/DeletePlayersModal";
 import { getPlayersByIdsAPI } from "../API/PlayerAPIs";
 import { defaultPlayer } from "../DefaltPars";
@@ -30,10 +29,6 @@ import DeleteAPlayerModal from "../Modals/DeleteAPlayerModal";
 function PlayersAdmin(props) {
   let dispathRedux = useDispatch();
 
-  useEffect(() => {
-    dispathRedux(getAllTeams());
-    dispathRedux(getAllPlayers());
-  }, []);
   let reduxState = useSelector((state) => state);
 
   let players = reduxState.players;

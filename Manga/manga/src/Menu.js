@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { Input } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchRedux } from "./Redux/Actions/StoryActions";
 function Menu(props) {
+  let dispathRedux = useDispatch();
+  let reduxSate = useSelector((state) => state);
+  let search = reduxSate.search;
   return (
     <div>
       <nav className="navbar navbar-default" role="navigation">
@@ -24,31 +29,35 @@ function Menu(props) {
 
         <div className="collapse navbar-collapse navbar-ex1-collapse">
           <ul className="nav navbar-nav">
-            <li className="active">
-              <a href="#">Tác giả</a>
+            <li>
+              <a>Tác giả</a>
             </li>
             <li>
-              <a href="#">Tải truyện lên</a>
+              <Link to={"/upload"}>
+                <a>Tải truyện lên</a>
+              </Link>
             </li>
           </ul>
           <form className="navbar-form navbar-left" role="search">
             <div className="form-group">
-              <input
+              <Input
                 type="text"
-                className="form-control"
                 placeholder="Tên truyện, tác giả..."
+                value={search}
+                onChange={(event) => {
+                  dispathRedux(setSearchRedux(event.target.value));
+                }}
               />
             </div>
-            <button type="submit" className="btn btn-default">
-              Tìm kiếm
-            </button>
           </form>
           <ul className="nav navbar-nav navbar-right">
             <li>
               <a href="#">Đăng ký</a>
             </li>
             <li>
-              <a href="#">Admin</a>
+              <Link to="/admin">
+                <a>Admin</a>
+              </Link>
             </li>
           </ul>
         </div>

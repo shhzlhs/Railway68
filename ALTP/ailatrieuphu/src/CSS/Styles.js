@@ -102,7 +102,7 @@ const formQuestionAnswerStyle = {
   borderRadius: "30px",
   overflow: "hidden",
 };
-const appStyle = { height: "5000px", backgroundColor: "#94f2ef" };
+const appStyle = { backgroundColor: "#94f2ef" };
 const styleNormal = {
   height: "52px",
   margin: "0px",

@@ -12,7 +12,7 @@ function AskModal(props) {
     askState,
   } = props;
   let x = { content: "NA" };
-  let answer = randomAnswerAsk || x; // Sử dụng toán tử "hoặc" để gán giá trị mặc định
+  let answer = randomAnswerAsk || x;
   let close = () => {
     setShowAskModal(false);
     setShowClickAsk(false);

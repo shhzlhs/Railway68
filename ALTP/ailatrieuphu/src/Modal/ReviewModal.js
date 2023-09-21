@@ -88,8 +88,8 @@ function ReviewModal(props) {
             height: "250px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end", // Change 'end' to 'flex-end'
-            alignItems: "center", // Add this line to center the content horizontally
+            justifyContent: "flex-end",
+            alignItems: "center",
           }}
         >
           <div

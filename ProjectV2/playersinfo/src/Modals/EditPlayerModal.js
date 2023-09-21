@@ -99,11 +99,11 @@ function EditPlayerModal(props) {
                 setPosition(event.target.value);
               }}
             >
-              <option>---</option>
+              <option value="">---</option>
               <option value="GK">GK</option>
               <option value="DF">DF</option>
               <option value="MF">MF</option>
-              <option value="WF">GK</option>
+              <option value="WF">WF</option>
             </Input>
           </FormGroup>
           <FormGroup>
@@ -116,7 +116,7 @@ function EditPlayerModal(props) {
                 setTeamId(event.target.value);
               }}
             >
-              <option>---</option>
+              <option value="">---</option>
               {items}
             </Input>
           </FormGroup>

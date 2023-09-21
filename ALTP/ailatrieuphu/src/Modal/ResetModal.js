@@ -28,15 +28,6 @@ function ResetModal(props) {
     setTopMiddleBody(<Welcome />);
   };
 
-  // useEffect(() => {
-  //   if (qNumber === 1) {
-  //     getQuestionByNumberAPI(qNumber).then((response) => {
-  //       setQuestions(response);
-  //       setQuestion(getRandomQuestion(response));
-  //     });
-  //   }
-  // }, [qNumber]);
-
   let nooo = () => {
     setShowResetModal(false);
   };

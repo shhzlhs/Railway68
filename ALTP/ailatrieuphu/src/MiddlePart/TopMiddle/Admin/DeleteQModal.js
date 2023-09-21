@@ -3,12 +3,14 @@ import { Modal, ModalFooter, ModalHeader, Button } from "reactstrap";
 import { buttonStyle1, imgButtonStyle1 } from "../../../CSS/Styles";
 
 function DeleteQModal(props) {
-  let { showDeleteQModal, setShowDeleteQModal, deleteQuestions, ids } = props;
+  let { showDeleteQModal, setShowDeleteQModal, deleteQuestions, ids, setIds } =
+    props;
   const items = ids.map((id) => {
     return id + ",";
   });
   const yesss = () => {
     deleteQuestions(ids);
+    setIds([]);
     setShowDeleteQModal(false);
   };
 

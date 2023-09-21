@@ -1,21 +1,26 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCategories } from "../Redux/Actions/CategoryActions";
-
+import React from "react";
+import { useSelector } from "react-redux";
+import { Button } from "reactstrap";
+import { buttonStyle1 } from "../Styles";
+import { useDispatch } from "react-redux";
+import { getStoriesRedux } from "../Redux/Actions/StoryActions";
 function HomePageMenu(props) {
   let dispathRedux = useDispatch();
   let reduxState = useSelector((state) => state);
 
   let categories = reduxState.categories;
 
-  useEffect(() => {
-    dispathRedux(getCategories());
-  }, []);
-
   const items = categories.map((category, index) => {
     return (
       <div key={index} className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-        {category.name}
+        <Button
+          onClick={() => {
+            dispathRedux(getStoriesRedux(category.stories));
+          }}
+          style={buttonStyle1}
+        >
+          {category.name}
+        </Button>
       </div>
     );
   });

@@ -24,37 +24,37 @@ const getTeamsByCompetitionRedux = (teams) => {
   };
 };
 const getAllTeams = () => {
-  return (dispath) => {
+  return (dispatch) => {
     return getTeamsAPI().then((res) => {
-      dispath(getAllTeamsRedux(res));
+      dispatch(getAllTeamsRedux(res));
     });
   };
 };
 const getTeamsByCompetition = (competitionId) => {
-  return (dispath) => {
+  return (dispatch) => {
     return getTeamsByCompetitionAPI(competitionId).then((res) => {
-      dispath(getTeamsByCompetitionRedux(res));
+      dispatch(getTeamsByCompetitionRedux(res));
     });
   };
 };
 
 const deleteTeams = (ids) => {
-  return (dispath) => {
+  return (dispatch) => {
     deleteTeamsAPI(ids).then(() => {
       return getTeamsAPI().then((res) => {
-        dispath(getAllTeamsRedux(res));
+        dispatch(getAllTeamsRedux(res));
         getPlayersAPI().then((ress) => {
-          dispath(getAllPlayersRedux(ress));
+          dispatch(getAllPlayersRedux(ress));
         });
       });
     });
   };
 };
 const addTeam = (team) => {
-  return (dispath) => {
+  return (dispatch) => {
     addTeamAPI(team).then(() => {
       return getTeamsAPI().then((res) => {
-        dispath(getAllTeamsRedux(res));
+        dispatch(getAllTeamsRedux(res));
       });
     });
   };

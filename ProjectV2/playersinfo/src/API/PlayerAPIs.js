@@ -1,7 +1,8 @@
 import { api } from "./API";
 
-const getPlayersAPI = () => {
-  return api("GET", "players/", null);
+const getPlayersAPI = (search) => {
+  let url = "players?search=" + search;
+  return api("GET", url, null);
 };
 const getPlayersByTeamsAPI = (teamIds) => {
   const url = `players/${teamIds}`;

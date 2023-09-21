@@ -9,9 +9,9 @@ const getAllCompetitionsRedux = (competitions) => {
 };
 
 const getAllCompetitions = () => {
-  return (dispath) => {
+  return (dispatch) => {
     return getCompetitionsAPI().then((res) => {
-      dispath(getAllCompetitionsRedux(res));
+      dispatch(getAllCompetitionsRedux(res));
     });
   };
 };

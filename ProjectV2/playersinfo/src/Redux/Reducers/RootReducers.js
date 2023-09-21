@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 import { competitionReducers } from "./CompetitionReducers";
 import { teamReducers } from "./TeamReducers";
-import { playerReducers, setPlayerEditReducers } from "./PlayerReducers";
+import {
+  playerReducers,
+  setPlayerEditReducers,
+  setSearchReducer,
+} from "./PlayerReducers";
 import {
   showAddPlayerReducers,
   showAddTeamReducers,
@@ -26,6 +30,7 @@ const rootReducers = combineReducers({
   playerEdit: setPlayerEditReducers,
   showDeletePlayers: showDeletePlayersReducers,
   showSingleDeletePlayer: showSingleDeletePlayerReducers,
+  search: setSearchReducer,
 });
 
 export { rootReducers };

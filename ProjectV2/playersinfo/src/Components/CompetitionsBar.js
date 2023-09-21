@@ -47,7 +47,7 @@ function CompetitionsBar(props) {
         <Button
           onClick={() => {
             dispathRedux(getAllTeams());
-            dispathRedux(getAllPlayers());
+            dispathRedux(getAllPlayers(""));
           }}
           style={buttonStyle1}
         >

@@ -2,6 +2,7 @@ import {
   GET_ALL_PLAYERS,
   GET_PLAYERS_BY_TEAM,
   SET_PLAYER_EDIT,
+  SET_SEARCH,
 } from "../Contants/ActionTypes";
 
 var initialState = [];
@@ -29,4 +30,13 @@ const setPlayerEditReducers = (state = iinitialState, action) => {
       return { ...state };
   }
 };
-export { playerReducers, setPlayerEditReducers };
+const setSearchReducer = (state = "", action) => {
+  switch (action.type) {
+    case SET_SEARCH:
+      state = action.payload;
+      return state;
+    default:
+      return state;
+  }
+};
+export { playerReducers, setPlayerEditReducers, setSearchReducer };

@@ -9,6 +9,7 @@ import {
   GET_ALL_PLAYERS,
   GET_PLAYERS_BY_TEAM,
   SET_PLAYER_EDIT,
+  SET_SEARCH,
 } from "../Contants/ActionTypes";
 
 const getAllPlayersRedux = (players) => {
@@ -29,45 +30,51 @@ const setPlayerEdit = (playerEdit) => {
     payload: playerEdit,
   };
 };
-const getAllPlayers = () => {
-  return (dispath) => {
-    return getPlayersAPI().then((res) => {
-      dispath(getAllPlayersRedux(res));
+const getAllPlayers = (search) => {
+  return (dispatch) => {
+    return getPlayersAPI(search).then((res) => {
+      dispatch(getAllPlayersRedux(res));
     });
   };
 };
 const getPlayersByTeams = (teamIds) => {
-  return (dispath) => {
+  return (dispatch) => {
     return getPlayersByTeamsAPI(teamIds).then((res) => {
-      dispath(getPlayersByTeamRedux(res));
+      dispatch(getPlayersByTeamRedux(res));
     });
   };
 };
 const addPlayer = (player) => {
-  return (dispath) => {
+  return (dispatch) => {
     addPlayerAPI(player).then(() => {
-      return getPlayersAPI().then((res) => {
-        dispath(getAllPlayersRedux(res));
+      return getPlayersAPI("").then((res) => {
+        dispatch(getAllPlayersRedux(res));
       });
     });
   };
 };
 const deletePlayers = (ids) => {
-  return (dispath) => {
+  return (dispatch) => {
     deletePlayersAPI(ids).then(() => {
-      return getPlayersAPI().then((res) => {
-        dispath(getAllPlayersRedux(res));
+      return getPlayersAPI("").then((res) => {
+        dispatch(getAllPlayersRedux(res));
       });
     });
   };
 };
 const editPlayer = (player) => {
-  return (dispath) => {
+  return (dispatch) => {
     editPlayerAPI(player).then(() => {
-      return getPlayersAPI().then((res) => {
-        dispath(getAllPlayersRedux(res));
+      return getPlayersAPI("").then((res) => {
+        dispatch(getAllPlayersRedux(res));
       });
     });
+  };
+};
+const setSearch = (search) => {
+  return {
+    type: SET_SEARCH,
+    payload: search,
   };
 };
 export {
@@ -79,4 +86,5 @@ export {
   deletePlayers,
   editPlayer,
   setPlayerEdit,
+  setSearch,
 };

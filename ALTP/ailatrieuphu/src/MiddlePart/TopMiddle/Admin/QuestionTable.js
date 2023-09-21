@@ -43,6 +43,7 @@ function QuestionTable(props) {
         setShowDeleteQModal={setShowDeleteQModal}
         deleteQuestions={deleteQuestions}
         ids={ids}
+        setIds={setIds}
       />
     </div>
   );

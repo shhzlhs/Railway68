@@ -7,6 +7,7 @@ const competitionButtonStyle = {
   objectFit: "cover",
   backgroundColor: "white",
 };
+const divMarginTop = { marginTop: "30px" };
 const imgStyle1 = { objectFit: "cover", width: "150px", height: "200px" };
 const buttonStyle1 = { border: "none", background: "none", objectFit: "cover" };
 const imgButtonStyle1 = { objectFit: "cover", width: "100px", height: "100px" };
@@ -30,6 +31,12 @@ const imgModalStyle2 = {
 };
 const midStyle = {
   display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+const midRowStyle = {
+  display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
 };
@@ -154,6 +161,7 @@ export {
   flag,
   imgDetail,
   divDetail,
+  divMarginTop,
   iconMail,
   adMotherStyle,
   imgAbout,
@@ -175,5 +183,6 @@ export {
   imgModalStyle,
   imgModalStyle2,
   imgModalStyle1,
+  midRowStyle,
   imgStyle1,
 };

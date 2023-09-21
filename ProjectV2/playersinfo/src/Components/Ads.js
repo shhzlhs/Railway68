@@ -1,11 +1,14 @@
 import React from "react";
 import { adMotherStyle, adsStyle } from "../Styles";
-
+import { Link } from "react-router-dom";
 function Ads(props) {
   return (
     <div style={adMotherStyle} className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
       <div className="row">
-        <img style={adsStyle} src="/imgs/icons/ad.gif" alt="ads"></img>
+        <Link to={"/about"}>
+          {" "}
+          <img style={adsStyle} src="/imgs/icons/ad.gif" alt="ads"></img>
+        </Link>
       </div>
       <div className="row">
         <img style={adsStyle} src="/imgs/icons/pre.jpg" alt="ads"></img>

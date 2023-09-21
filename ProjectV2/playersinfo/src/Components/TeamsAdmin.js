@@ -107,7 +107,7 @@ function TeamsAdmin(props) {
       <div style={teamRowStyle} className="row">
         <Button
           onClick={() => {
-            dispathRedux(getAllPlayers());
+            dispathRedux(getAllPlayers(""));
           }}
           style={buttonStyle1}
         >
