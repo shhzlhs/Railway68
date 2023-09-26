@@ -22,5 +22,4 @@ export {
   addQuestionAPI,
   deleteQuestionAPI,
   getQuestionByIdAPI,
-  mmmmmmajhdcahsd,
 };
