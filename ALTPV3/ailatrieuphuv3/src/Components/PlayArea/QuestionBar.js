@@ -9,10 +9,10 @@ function QuestionBar(props) {
     <div style={midBarDiv} className="row">
       <Card
         className="my-2"
-        color="primary"
         inverse
         style={{
           width: "1000px",
+          backgroundColor: "aqua",
         }}
       >
         <CardHeader>
